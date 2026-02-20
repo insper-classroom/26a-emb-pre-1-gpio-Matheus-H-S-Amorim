@@ -42,16 +42,16 @@ void seven_seg_display() {
 
 int main() {
     stdio_init_all();
-    int aux = 0;
+    //int aux = 0; oentei pq n é usado
 
-    BUTTON_GPIO = FIRST_GPIO + 7;
+    // BUTTON_GPIO = FIRST_GPIO + 7;  comentei pq nao é usado
 
     gpio_init(BTN_PIN_G);
     gpio_set_dir(BTN_PIN_G, GPIO_IN);
     gpio_pull_up(BTN_PIN_G);
 
     seven_seg_init();
-    seven_seg_display(2);
+    seven_seg_display();
 
     while (true) {
         int btn = gpio_get(BTN_PIN_G);
@@ -60,7 +60,7 @@ int main() {
                 cnt = 0;
             }
             seven_seg_display();
-            printf("cnt: %l\n", cnt);
+            printf("cnt: %d\n", cnt);
         }
         last_btn = btn;
         sleep_ms(10); // Polling interval

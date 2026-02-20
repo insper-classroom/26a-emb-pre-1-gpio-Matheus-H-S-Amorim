@@ -22,6 +22,8 @@ int main() {
         // botao apertado é 0 (solto é 1)
 
         if (!gpio_get(BTN_PIN)) {
+            sleep_ms(20);
+
             printf("Botao 1: %d\n", cnt_1++);
 
             while(!gpio_get(BTN_PIN)){
@@ -29,17 +31,19 @@ int main() {
 
             };
 
-            sleep_ms(50);
+            sleep_ms(20);
         }
 
-        
+
         if (!gpio_get(BTN_PIN_2)) {
+            sleep_ms(20);
+
             printf("Botao 2: %d\n", cnt_2++);
             while(!gpio_get(BTN_PIN_2)){
                 sleep_ms(10);
             };
             
-            sleep_ms(50);
+            sleep_ms(20);
 
             
         }
