@@ -29,7 +29,7 @@ void seven_seg_init() {
     }
 }
 
-void seven_seg_display(cnt) {
+void seven_seg_display(int cnt) {
     int value = bits[cnt];
     for (int i = 0; i < 7; i++) {
         int gpio = FIRST_GPIO + i;
@@ -40,8 +40,8 @@ void seven_seg_display(cnt) {
 
 int main() {
 
-    int cnt;
-    int last_btn; // Button not pressed (pulled up)
+    int cnt = 0;
+    int last_btn = 1; // Button not pressed (pulled up)
 
     stdio_init_all();
     //int aux = 0; oentei pq n é usado
@@ -53,7 +53,7 @@ int main() {
     gpio_pull_up(BTN_PIN_G);
 
     seven_seg_init();
-    seven_seg_display();
+    seven_seg_display(cnt);
 
     while (true) {
         int btn = gpio_get(BTN_PIN_G);
