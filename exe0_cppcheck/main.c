@@ -18,5 +18,11 @@ int main(void) {
         arr[i] = result;
     }
 
+
+    // usando array p n dar erro
+    for(int i = 0; i < NUM_ELEMENTS; i++) {
+        printf("%d\n", arr[i]);
+}
+
     return 0;
 }
