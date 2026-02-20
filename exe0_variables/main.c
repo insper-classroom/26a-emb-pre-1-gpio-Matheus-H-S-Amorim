@@ -16,4 +16,6 @@ void main(void) {
             b = 1;
         }
     }
+
+    printf("Valor de 'b' é: %d",b);
 }
